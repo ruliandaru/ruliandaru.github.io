@@ -1,0 +1,51 @@
+backend:
+  name: git-gateway
+
+# when using the default proxy server port
+# local_backend: true
+local_backend:
+  allowed_hosts: [0.0.0.0, "192.168.1.2"]
+media_folder: static/img
+
+collections:
+  - name: "research"
+    label: "research"
+    folder: "content/research"
+    format: "frontmatter"
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    editor:
+      preview: false
+    fields:
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Publish Date", name: "date", widget: "datetime" }
+      - { label: "Description", name: "description", widget: "string" }
+      - { label: "Body", name: "body", widget: "markdown" }
+      - { label: "Header Image", name: "headerImage", widget: "image" }
+
+  - name: "publication"
+    label: "publication"
+    folder: "content/publication"
+    format: "frontmatter"
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    editor:
+      preview: false
+    fields:
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Publish Date", name: "date", widget: "datetime" }
+      - { label: "Publication link", name: "link", widget: "string" }
+
+  - name: "software"
+    label: "software"
+    folder: "content/software"
+    format: "frontmatter"
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    editor:
+      preview: false
+    fields:
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Description", name: "description", widget: "string" }
+      - { label: "link", name: "link", widget: "string" }
+      - { label: "Header Image", name: "headerImage", widget: "image" }
