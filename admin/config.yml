@@ -34,7 +34,7 @@ collections:
     fields:
       - { label: "Title", name: "title", widget: "string" }
       - { label: "Publish Date", name: "date", widget: "datetime" }
-      - { label: "Publication link", name: "link", widget: "string" }
+      - { label: "Publication link", name: "publicationLink", widget: "string" }
 
   - name: "software"
     label: "software"
